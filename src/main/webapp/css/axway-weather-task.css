@@ -1,0 +1,23 @@
+/* CSS file */
+
+div#titleDiv {
+    width: 100%;
+    height: 100px;
+    border: 1px solid red;
+}
+
+div#daysCont {
+    width: 100%;
+    height: 200px;
+    border: 1px solid yellow;
+}
+
+table#daysContainer {
+    width: 100%;
+    border: 1px solid green;
+    height: 200px;
+}
+
+td.day {
+    border: 1px solid blue;
+}

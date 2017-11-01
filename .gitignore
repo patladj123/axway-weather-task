@@ -1,0 +1,35 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+#Exclude directories
+/tomcat.8080/
+/maven-eclipse.xml
+/target/
+/.settings
+/.externalToolBuilders
+/Start.bat
+/weather-axway-task-app.iml
+/.idea
+/location2weather-data.db.txt
+/ip2location-data.db.txt
