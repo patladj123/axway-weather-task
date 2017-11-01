@@ -12,7 +12,7 @@ public class Main {
         if (HOSTNAME==null || HOSTNAME.length()==0) HOSTNAME="8080";
 
         String contextPath = "/" ;
-        String appBase = "../../../target/classes";
+        String appBase = "/target/classes";
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(Integer.valueOf(PORT ));
         tomcat.setHostname(HOSTNAME);
