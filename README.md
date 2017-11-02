@@ -1,6 +1,15 @@
 ## Weather Axway Task
 Is still in alpha version. Please stay tuned for immediate updates.
-Online demo at: http://www.websitedevguide.com:8080/
+
+
+Online demos:
+
+REST API:
+http://www.websitedevguide.com:8080/weatheraxway-rest-service/get-data-for-ip/[IP_address_you_desire_a_weather_forcast_for]
+
+Front-End (Still under development):
+http://www.websitedevguide.com:8080/
+
 
 Version 0.1 released.
 
@@ -17,6 +26,7 @@ Build & run HOWTO. Stand alone. (No need of app server. Uses embedded Tomcat 7):
  - Navigate your browser to http://localhost:8080
 
 
-If you want to run it IDE I will publish instructions soon.
-Basically if you want to run it on non-embedded Tomcat you need to open pom.xml and uncomment each <scope>provided</scope> on the "Begin of Apache 7 embedded" section.
-Tomcat 7 is a requirement in this case.
+If you want to run it IDE, yet using Maven:
+Basically if you want to run it on non-embedded Tomcat you need to open the pom.xml and uncomment each <scope>provided</scope> in the "Begin of Apache 7 embedded" section.
+Tomcat 7 is a requirement for the IDE app server in this case.
+
