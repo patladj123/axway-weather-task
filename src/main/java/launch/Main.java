@@ -1,6 +1,7 @@
 package launch;
 
 import org.apache.catalina.startup.Tomcat;
+import org.apache.tomcat.util.scan.StandardJarScanner;
 
 
 public class Main {
@@ -19,6 +20,7 @@ public class Main {
         tomcat.setHostname(HOSTNAME);
         tomcat.getHost().setAppBase(appBase);
         tomcat.addWebapp(contextPath, appBase);
+        ((StandardJarScanner) ctx.getJarScanner()).setScanAllDirectories(true);
 //        tomcat.addWebapp(host, url, name, path)
 
         tomcat.start();
