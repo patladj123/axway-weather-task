@@ -1,7 +1,10 @@
 package launch;
 
+import org.apache.catalina.Context;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.tomcat.util.scan.StandardJarScanner;
+
+import java.io.File;
 
 
 public class Main {
@@ -16,10 +19,13 @@ public class Main {
         String contextPath = "/" ;
         String appBase = ".";
         Tomcat tomcat = new Tomcat();
+        tomcat.enableNaming();
         tomcat.setPort(Integer.valueOf(PORT ));
         tomcat.setHostname(HOSTNAME);
         tomcat.getHost().setAppBase(appBase);
         tomcat.addWebapp(contextPath, appBase);
+        String webappDirLocation = "src/main/webapp/";
+        Context ctx = tomcat.addWebapp(tomcat.getHost(), "/embeddedTomcat", new File(webappDirLocation).getAbsolutePath());
         ((StandardJarScanner) ctx.getJarScanner()).setScanAllDirectories(true);
 //        tomcat.addWebapp(host, url, name, path)
 
