@@ -33,6 +33,9 @@ public class RestRequestGet {
 
 		// Check for IP case first, since the All pattern would also match
 		matcher = regExPatternWithData.matcher(pathInfo);
+
+		System.out.println("pathInfo=|"+pathInfo+"|");
+
 		if (matcher.find()) {
 			if ("get-data-for-ip".equals(matcher.group(1))) {
 				Matcher m2=null;
