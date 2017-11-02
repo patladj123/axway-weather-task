@@ -18,8 +18,8 @@ public class Main {
 
 
 
-        String contextPath = "./" ;
-        String appBase = "";
+        String contextPath = "" ;
+        String appBase = "classes";
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(Integer.valueOf(PORT ));
         tomcat.setHostname(HOSTNAME);
