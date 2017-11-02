@@ -16,17 +16,39 @@ public class Main {
         if (PORT==null || PORT.length()==0) PORT="8080";
         if (HOSTNAME==null || HOSTNAME.length()==0) HOSTNAME="8080";
 
+
+
         String contextPath = "/" ;
-        String appBase = ".";
+        String appBase = "./clssses";
         Tomcat tomcat = new Tomcat();
-        tomcat.enableNaming();
         tomcat.setPort(Integer.valueOf(PORT ));
         tomcat.setHostname(HOSTNAME);
         tomcat.getHost().setAppBase(appBase);
         tomcat.addWebapp(contextPath, appBase);
-        String webappDirLocation = "../src/main/webapp/";
-        Context ctx = tomcat.addWebapp(tomcat.getHost(), "/embeddedTomcat", new File(webappDirLocation).getAbsolutePath());
-        ((StandardJarScanner) ctx.getJarScanner()).setScanAllDirectories(true);
+//        tomcat.addWebapp(host, url, name, path)
+
+        tomcat.start();
+        tomcat.getServer().await();
+
+//        String contextPath = "/" ;
+//        String appBase = ".";
+//        Tomcat tomcat = new Tomcat();
+//        tomcat.enableNaming();
+//        tomcat.setPort(Integer.valueOf(PORT ));
+//        tomcat.setHostname(HOSTNAME);
+//        tomcat.getHost().setAppBase(appBase);
+//        tomcat.addWebapp(contextPath, appBase);
+//        String webappDirLocation = "../src/main/webapp/";
+//        Context ctx = tomcat.addWebapp(tomcat.getHost(), "/embeddedTomcat", new File(webappDirLocation).getAbsolutePath());
+//        ((StandardJarScanner) ctx.getJarScanner()).setScanAllDirectories(true);
+//
+//
+//        File additionWebInfClasses = new File("target/classes");
+//        WebResourceRoot resources = new StandardRoot(ctx);
+//        resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes", additionWebInfClasses.getAbsolutePath(), "/"));
+//        ctx.setResources(resources);
+
+
 //        tomcat.addWebapp(host, url, name, path)
 
         tomcat.start();
