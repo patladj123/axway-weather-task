@@ -23,7 +23,9 @@ Build & run HOWTO. Stand alone. (No need of app server. Uses embedded Tomcat 7):
  - mvn package
  - cd target
  - java -jar weather-axwaytask-app-1.0-SNAPSHOT-jar-with-dependencies.jar
- - Navigate your browser to http://localhost:8080
+ - Navigate your browser to:
+ 				(1) http://localhost:8080/ ------- for the UI
+ 				(2) and to http://localhost:8080/weatheraxway-rest-service/get-data-for-ip/[IP_address] ------- for the REST API
 
 
 If you want to run it IDE, yet using Maven:
