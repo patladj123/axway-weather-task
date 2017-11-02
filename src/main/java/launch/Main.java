@@ -17,7 +17,7 @@ public class Main {
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(8080);
 
-        StandardContext ctx = (StandardContext) tomcat.addWebapp("/embeddedTomcat",
+        StandardContext ctx = (StandardContext) tomcat.addWebapp("/",
                 new File(webappDirLocation).getAbsolutePath());
 
 //declare an alternate location for your "WEB-INF/classes" dir:
