@@ -13,7 +13,7 @@ public class Main {
     public static String HOSTNAME = System.getenv("HOSTNAME");
 
     public static void main(String[] args) throws Exception {
-        String webappDirLocation = "src/main/webapp/";
+        String webappDirLocation = "../src/main/webapp/";
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(8080);
 
