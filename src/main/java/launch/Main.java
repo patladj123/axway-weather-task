@@ -24,7 +24,7 @@ public class Main {
         tomcat.setHostname(HOSTNAME);
         tomcat.getHost().setAppBase(appBase);
         tomcat.addWebapp(contextPath, appBase);
-        String webappDirLocation = "src/main/webapp/";
+        String webappDirLocation = "../src/main/webapp/";
         Context ctx = tomcat.addWebapp(tomcat.getHost(), "/embeddedTomcat", new File(webappDirLocation).getAbsolutePath());
         ((StandardJarScanner) ctx.getJarScanner()).setScanAllDirectories(true);
 //        tomcat.addWebapp(host, url, name, path)
