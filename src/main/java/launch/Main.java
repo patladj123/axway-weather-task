@@ -19,7 +19,7 @@ public class Main {
 
 
         String contextPath = "/" ;
-        String appBase = "./clssses";
+        String appBase = "clssses";
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(Integer.valueOf(PORT ));
         tomcat.setHostname(HOSTNAME);
