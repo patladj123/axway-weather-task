@@ -21,8 +21,8 @@ import java.util.regex.Pattern;
  */
 public class RestRequestGet {
 	// Accommodate two requests, one for all resources, another for a specific resource (in this case a specific IP address)
-	private Pattern regExAllPattern = Pattern.compile("/?weatheraxway-rest-service");
-	private Pattern regExPatternWithData = Pattern.compile("/?weatheraxway-rest-service/(get-data-for-ip)/([\\d\\.]+)");
+	private Pattern regExAllPattern = Pattern.compile("/weatheraxway-rest-service");
+	private Pattern regExPatternWithData = Pattern.compile("/weatheraxway-rest-service/(get-data-for-ip)/([\\d\\.]+)");
 	private Pattern MATCH_VALID_IP = Pattern.compile("^\\s*(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})\\s*$", Pattern.DOTALL);
 
 	private String ip;
@@ -34,10 +34,10 @@ public class RestRequestGet {
 		// Check for IP case first, since the All pattern would also match
 		matcher = regExPatternWithData.matcher(pathInfo);
 
-		System.out.println("pathInfo=|"+pathInfo+"|");
+//		System.out.println("pathInfo=|"+pathInfo+"|");
 
 		if (matcher.find()) {
-			System.out.println("match-va");
+//			System.out.println("match-va");
 			if ("get-data-for-ip".equals(matcher.group(1))) {
 				Matcher m2=null;
 				if ( (null != (m2= MATCH_VALID_IP.matcher(matcher.group(2))) && m2.find()) ) {
@@ -132,9 +132,7 @@ public class RestRequestGet {
 
 			return;
 		}
-		else {
-			System.out.println("NE match-va");
-		}
+
 
 		matcher = regExAllPattern.matcher(pathInfo);
 		if (matcher.find()) return;
