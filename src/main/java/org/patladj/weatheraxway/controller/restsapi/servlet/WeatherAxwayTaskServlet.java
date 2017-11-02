@@ -49,7 +49,7 @@ public class WeatherAxwayTaskServlet extends HttpServlet {
 
 		PrintWriter out = resp.getWriter();
 
-//		out.println("GET request handling");
+		out.println("GET request handling");
 //		out.println("req.getRequestURI()=|"+req.getRequestURI()+"|");
 
 		RestRequestGet resourceValues = new RestRequestGet(req.getRequestURI(), out, resp);
