@@ -21,7 +21,7 @@ public class Main {
                 new File(webappDirLocation).getAbsolutePath());
 
 //declare an alternate location for your "WEB-INF/classes" dir:
-        File additionWebInfClasses = new File("target/classes");
+        File additionWebInfClasses = new File("classes");
         VirtualDirContext resources = new VirtualDirContext();
         resources.setExtraResourcePaths("/WEB-INF/classes=" + additionWebInfClasses);
         ctx.setResources(resources);
