@@ -37,6 +37,7 @@ public class RestRequestGet {
 		System.out.println("pathInfo=|"+pathInfo+"|");
 
 		if (matcher.find()) {
+			System.out.println("match-va");
 			if ("get-data-for-ip".equals(matcher.group(1))) {
 				Matcher m2=null;
 				if ( (null != (m2= MATCH_VALID_IP.matcher(matcher.group(2))) && m2.find()) ) {
@@ -130,6 +131,9 @@ public class RestRequestGet {
 			}
 
 			return;
+		}
+		else {
+			System.out.println("NE match-va");
 		}
 
 		matcher = regExAllPattern.matcher(pathInfo);
