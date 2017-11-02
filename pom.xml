@@ -143,11 +143,6 @@
 
 
 
-
-
-
-
-
     </dependencies>
      <build>
         <finalName>weather-axwaytask-app</finalName>
@@ -198,7 +193,7 @@
 			    <version>2.2</version>
 			    <configuration>
 				    <port>8080</port>
-				    <path>/</path>
+				    <path>/classes/</path>
 			    </configuration>
 		    </plugin>
         </plugins>
