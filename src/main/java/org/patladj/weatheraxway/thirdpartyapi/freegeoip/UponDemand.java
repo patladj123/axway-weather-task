@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class UponDemand {
 
-	private static final HttpClient HTTP_CLIENT = new DefaultHttpClient();
+	private static HttpClient HTTP_CLIENT = new DefaultHttpClient();
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 
 	static {
@@ -68,6 +68,7 @@ public class UponDemand {
 		String url = "http://freegeoip.net/json/" + ip; // Using the API
 		IPInfo ipInfo = null;
 		try {
+			HTTP_CLIENT = new DefaultHttpClient();
 			HttpGet httpGet = new HttpGet(url);
 			HttpResponse httpResponse = HTTP_CLIENT.execute(httpGet, new BasicHttpContext());
 			String responseString;
@@ -80,7 +81,7 @@ public class UponDemand {
 		} catch (Exception ex) {
 			System.out.println(ex.toString());
 		} finally {
-//			HTTP_CLIENT.getConnectionManager().shutdown();
+			HTTP_CLIENT.getConnectionManager().shutdown();
 		}
 		return ipInfo;
 	}

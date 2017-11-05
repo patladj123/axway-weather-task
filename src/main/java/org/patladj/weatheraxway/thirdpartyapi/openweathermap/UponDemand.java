@@ -68,7 +68,7 @@ public class UponDemand {
 		} catch (Exception ex) {
 			System.err.println(ex.toString());
 		} finally {
-			HTTP_CLIENT.getConnectionManager().shutdown();
+//			HTTP_CLIENT.getConnectionManager().shutdown();
 		}
 
 		//If we have a valid json response content

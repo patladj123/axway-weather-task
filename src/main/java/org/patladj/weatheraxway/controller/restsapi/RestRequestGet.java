@@ -66,10 +66,12 @@ public class RestRequestGet {
 							System.out.println("FreeGeoIP Request completed in "+(System.currentTimeMillis()-start)+"ms");
 							geoipSeeker.disposeIt();
 
-							//Then we save it in our database for later (cached) usage
-							itdb.openIP2LocationTransaction();
-							itdb.insertIP2Location(ip2Location);
-							itdb.commitIP2LocationTransaction();
+							if (ip2Location!=null) {
+								//Then we save it in our database for later (cached) usage
+								itdb.openIP2LocationTransaction();
+								itdb.insertIP2Location(ip2Location);
+								itdb.commitIP2LocationTransaction();
+							}
 						}
 
 
@@ -98,17 +100,19 @@ public class RestRequestGet {
 							System.out.println("OpenWeatherMap Request completed in "+(System.currentTimeMillis()-start)+"ms");
 							weatherMapSeeker.disposeIt();
 
-							//Sometimes FreeGeoIP does not locate the cityName, so we take it from the OpenWeatherMap API response
-							ip2Location.city=cityName;
-							//We need to save the location DB again, only because of potentially blank city
-							itdb.openIP2LocationTransaction();
-							itdb.insertIP2Location(ip2Location);
-							itdb.commitIP2LocationTransaction();
+							if (dayList!=null) {
+								//Sometimes FreeGeoIP does not locate the cityName, so we take it from the OpenWeatherMap API response
+								ip2Location.city=cityName;
+								//We need to save the location DB again, only because of potentially blank city
+								itdb.openIP2LocationTransaction();
+								itdb.insertIP2Location(ip2Location);
+								itdb.commitIP2LocationTransaction();
 
-							//Then we save it in our database for later (cached) usage
-							itdb.openLatLongWeatherTransaction();
-							itdb.insertDays(dayList,ip2Location);
-							itdb.commitLatLongWeatherTransaction();
+								//Then we save it in our database for later (cached) usage
+								itdb.openLatLongWeatherTransaction();
+								itdb.insertDays(dayList,ip2Location);
+								itdb.commitLatLongWeatherTransaction();
+							}
 						}
 
 
